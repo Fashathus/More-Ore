@@ -242,7 +242,7 @@ Game.launch = () => {
       fps: 30,
       shownAlert: false,
       buyAmount: 1,
-      inventoryOpen: false
+      inventoryOpen: false 
     }
 
   }
@@ -663,6 +663,7 @@ Game.launch = () => {
     let past = Game.state.lastLogin
     let current = new Date().getTime()
     let amountOfTimePassed = (current - past) / 1000 // GETS THE DIFFERENCE IN SECONDS
+    Game.calculateRemainingQuest((current - past))
     let currentOpS = Game.state.oresPerSecond
     let amountToGain = (amountOfTimePassed * currentOpS)
     if (amountToGain >= 1 && amountOfTimePassed >= 30) {
@@ -1012,7 +1013,7 @@ Game.launch = () => {
     Game.state.stats.currentOreClicks++
     Game.state.stats.currentOresMined += amount
     Game.state.stats.totalOresMined += amount
-    //console.log(amount)
+    console.log(amount)
 
     // CHECK CLICK RELATED ACHIEVEMENTS
 
@@ -3552,7 +3553,7 @@ Game.launch = () => {
   }
 
   window.onfocus = () => {
-    Game.earnOfflineGain()
+    //Game.earnOfflineGain()
     Game.blurred = false;
   }
 
