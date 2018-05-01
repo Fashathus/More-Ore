@@ -3429,7 +3429,6 @@ Game.launch = () => {
 
   Game.logic = () => {
 
-      console.log(Game.state.prefs.InventoryOpen)
       let timePassed = Date.now() - lastTimeLogic;
       lastTimeLogic = Date.now();
 
