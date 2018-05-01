@@ -150,6 +150,8 @@ let getRandomColor = () => {
 
 let Game = {}
 
+
+
 Game.launch = () => {
 
   Game.state = {
@@ -3396,9 +3398,9 @@ Game.launch = () => {
 
   Game.logic = () => {
 
-
-      let timePassed = Date.now() - Game.state.prefs.lastTimeLogic;
-      Game.state.prefs.lastTimeLogic = Date.now();
+      console.log(Game.state.prefs.InventoryOpen)
+      let timePassed = Date.now() - lastTimeLogic;
+      lastTimeLogic = Date.now();
 
       // HANDLE ORES N SHIT
       if (Game.recalculateOpC) Game.calculateOpC()
@@ -3418,9 +3420,9 @@ Game.launch = () => {
 
           // run every 10s
           // 
-          if ((Date.now() - Game.state.prefs.lastTimeBonus) > (10 * 1000)) {
+          if ((Date.now() - lastTimeBonus) > (10 * 1000)) {
               Game.randomBonus()
-              Game.state.prefs.lastTimeBonus = Date.now();
+              lastTimeBonus = Date.now();
           }
       }
 
